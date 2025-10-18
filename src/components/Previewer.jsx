@@ -1,10 +1,11 @@
 import React from 'react'
+import { marked } from 'marked'
 
-const Previewer = () => {
+const Previewer = ({input}) => {
   return (
     <div className="previewer-container">
         <label htmlFor="previewer">Previewer</label>
-        <textarea id="previewer"></textarea>
+        <div id="previewer" dangerouslySetInnerHTML={{ __html: marked.parse(input) }}></div>
     </div>
   )
 }

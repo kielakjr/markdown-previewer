@@ -76,10 +76,8 @@ body {
     label {
         @include textarea-label;
     }
-    textarea {
+    div {
         @include textarea-style(600px);
-    }
-    textarea:focus {
-        @include textarea-style-focus;
+        overflow: scroll;
     }
 }
