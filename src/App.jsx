@@ -3,46 +3,22 @@ import Editor from './components/Editor.jsx'
 import Previewer from './components/Previewer.jsx'
 
 const App = () => {
-     const defaultMarkdownText = `# Welcome to my React Markdown Previewer!
+     const defaultMarkdownText = `# My Markdown Previewer
 
-## This is a sub-heading...
-### And here's some other cool stuff:
+## Subheading Example
 
-Heres some code, \`<div></div>\`, between 2 backticks.
+Welcome to my Markdown Previewer. In this text, you'll find a **bolded text** example, a [link](https://example.com), and some inline code such as \`console.log("Hello, world!")\`.
 
-\`\`\`
-// this is multi-line code:
-
-function anotherExample(firstLine, lastLine) {
-if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-}
+\`\`\`javascript
+// This is a code block example:
+function sayHello() {
+  console.log("Hello, world!");
 }
 \`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
+- This is a list item.
 
-There's also [links](https://www.freecodecamp.org), and
-> Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course there are lists.
-- Some are bulleted.
-    - With different indentation levels.
-        - That look like this.
-
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
+> This is a blockquote.
 
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `;
