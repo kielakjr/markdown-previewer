@@ -60,32 +60,26 @@ body {
 
 .editor-container {
     @include container(600px);
+    label {
+        @include textarea-label;
+    }
+    textarea {
+        @include textarea-style;
+    }
+    textarea:focus {
+        @include textarea-style-focus;
+    }
 }
 
 .previewer-container {
     @include container(800px);
-}
-
-.editor-container label {
-    @include textarea-label;
-}
-
-.previewer-container label {
-    @include textarea-label;
-}
-
-.editor-container textarea {
-    @include textarea-style;
-}
-
-.previewer-container textarea {
-    @include textarea-style(600px);
-}
-
-.editor-container textarea:focus {
-    @include textarea-style-focus;
-}
-
-.previewer-container textarea:focus {
-    @include textarea-style-focus;
+    label {
+        @include textarea-label;
+    }
+    textarea {
+        @include textarea-style(600px);
+    }
+    textarea:focus {
+        @include textarea-style-focus;
+    }
 }
