@@ -1,10 +1,12 @@
 import React from 'react'
 import Editor from './components/Editor.jsx'
+import Previewer from './components/Previewer.jsx'
 
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <Editor />
+      <Previewer />
     </div>
   )
 }

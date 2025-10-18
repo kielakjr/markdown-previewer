@@ -1,0 +1,91 @@
+@mixin container($max-width) {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+@mixin textarea-style($height: 200px) {
+    width: 100%;
+    height: $height;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@mixin textarea-label {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+}
+
+@mixin textarea-style-focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.app {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editor-container {
+    @include container(600px);
+}
+
+.previewer-container {
+    @include container(800px);
+}
+
+.editor-container label {
+    @include textarea-label;
+}
+
+.previewer-container label {
+    @include textarea-label;
+}
+
+.editor-container textarea {
+    @include textarea-style;
+}
+
+.previewer-container textarea {
+    @include textarea-style(600px);
+}
+
+.editor-container textarea:focus {
+    @include textarea-style-focus;
+}
+
+.previewer-container textarea:focus {
+    @include textarea-style-focus;
+}

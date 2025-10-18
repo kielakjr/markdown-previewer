@@ -1,49 +1,99 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .editor-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
-.editor-container textarea {
-    width: 100%;
-    height: 200px;
-    font-size: 16px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 0 0 4px 4px;
-    font-family: 'Courier New', Courier, monospace;
+.previewer-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
 .editor-container label {
-    font-weight: bold;
-    display: block;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+.previewer-container label {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+.editor-container textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.previewer-container textarea {
+  width: 100%;
+  height: 600px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .editor-container textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
+
+.previewer-container textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/*# sourceMappingURL=index.css.map */
