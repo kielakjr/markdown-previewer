@@ -1,16 +1,48 @@
-# React + Vite
+# Markdown Previewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small React + Vite application that renders live HTML preview from Markdown input.
 
-Currently, two official plugins are available:
+What it does
+- Type Markdown in the Editor; the Previewer renders HTML in real time.
+- Uses marked for Markdown → HTML conversion and DOMPurify to sanitize output before insertion.
+- Minimal, single-page layout with Editor and Previewer components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How it works (brief)
+- src/App.jsx holds the shared markdown state.
+- src/components/Editor.jsx is a controlled textarea that updates the state.
+- src/components/Previewer.jsx converts markdown to HTML with marked.parse and sanitizes it with DOMPurify before rendering via dangerouslySetInnerHTML.
+- Vite handles development server, HMR and builds.
 
-## React Compiler
+Security note
+- marked outputs raw HTML. This project uses DOMPurify to sanitize before injecting into the DOM.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Quick start
 
-## Expanding the ESLint configuration
+Requirements
+- Node.js (18+ recommended)
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install
+1. Install dependencies:
+   npm install
+
+Development
+1. Start dev server:
+   npm run dev
+2. Open the URL printed by Vite (usually http://localhost:5173).
+
+Build / Preview
+- Build production bundle:
+  npm run build
+- Preview the production build:
+  npm run preview
+
+Project structure (important files)
+- index.html — app entry
+- src/main.jsx — React bootstrap
+- src/App.jsx — app state and layout
+- src/components/Editor.jsx — input textarea
+- src/components/Previewer.jsx — markdown rendering (marked + DOMPurify)
+- src/styles.scss / src/index.css — styling
+- vite.config.js — Vite config
+- package.json — scripts and dependencies
